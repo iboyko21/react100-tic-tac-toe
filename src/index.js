@@ -98,14 +98,15 @@ function Square(props) {
         const current = history[this.state.stepNumber];
         const winner = calculateWinner(current.squares);
 
-        const moves = history.map((step, move) => {
+        const moves = history.map((_, move) => {
             const desc = move 
-            ? `Move #${move} : Row${history[move].location[0]}, Col${history[move].location[1]}` 
-            : 'Go to game start';
+            ? `Row ${history[move].location[0]}, Col ${history[move].location[1]}` 
+            : 'Game Start';
             return (
                 <li key={move}>
-                    <button onClick={() => this.jumpTo(move)}>
-                        {move === this.state.stepNumber ? <b>{desc}</b> : desc}
+                    <button className="move" onClick={() => this.jumpTo(move)}>
+                        {move === this.state.stepNumber 
+                            ? <b>{desc}</b> : desc}
                     </button>
                 </li>
             );
@@ -122,15 +123,16 @@ function Square(props) {
 
       return (
         <div className="game">
-          <div className="game-board">
-            <Board 
-                winningSquares={winner? winner.line : []}
-                squares={current.squares} 
-                onClick={(i) => this.handleClick(i)}/>
-          </div>
-          <div className="game-info">
-            <div>{status}</div>
-            <ol>{moves}</ol>
+            <div className="game-info">{status}</div>
+            <div className="game-board">
+                <Board 
+                    winningSquares={winner ? winner.line : []}
+                    squares={current.squares} 
+                    onClick={(i) => this.handleClick(i)}/>
+            </div>
+          <div className="moves">
+            <p className="center">Moves List</p>
+            <ol start="0">{moves}</ol>
           </div>
         </div>
       );

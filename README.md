@@ -10,7 +10,7 @@ To install the app, follow these steps:
 - Run npm start to start the development server.
 - Once the development server has started, you can access the app by navigating to http://localhost:3000 in your web browser.
 
-To play the game, simply click on any empty square to make your move. The game will automatically switch turns between players until someone wins or the game ends in a tie. If you want to start a new game, just click the "New Game" button.
+To play the game, simply click on any empty square to make your move. The game will automatically switch turns between players until someone wins or the game ends in a tie. If you want to start a new game, just click the "Game Start" button.
 
 # Credits
 This app was built using React and was inspired by the official React tutorial on the React website.

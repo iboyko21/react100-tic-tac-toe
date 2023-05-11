@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-
 function Square(props) {
         return (
             <button className={"square " + (props.isWinning ? "square-winning" : null)} 
@@ -20,7 +19,7 @@ function Square(props) {
             key={"square " + i}
             value={this.props.squares[i]} 
             onClick={() => this.props.onClick(i)}/>);
-    }
+    };
   
     render() {
       return (
@@ -42,8 +41,8 @@ function Square(props) {
           </div>
         </div>
       );
-    }
-  }
+    };
+  };
   
   class Game extends React.Component {
     constructor(props) {
@@ -55,7 +54,7 @@ function Square(props) {
             stepNumber: 0,
             xIsNext: true
         };
-    }
+    };
 
     handleClick(i) {
         const locations = [
@@ -119,7 +118,7 @@ function Square(props) {
             status = "Draw";
         } else {
             status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
-        }
+        };
 
       return (
         <div className="game">
@@ -136,8 +135,8 @@ function Square(props) {
           </div>
         </div>
       );
-    }
-  }
+    };
+  };
 
   function calculateWinner(squares) {
     const lines = [
@@ -157,7 +156,7 @@ function Square(props) {
         }
     }
     return null;
-  }
+  };
   
   //========================================
   
